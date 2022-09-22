@@ -2,6 +2,7 @@ package com.example.colosseum2_dain
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.colosseum2_dain.utils.ServerUtil
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
@@ -17,6 +18,7 @@ class MainActivity : BaseActivity() {
 
             val inputEmail = emailEdt.text.toString()
             val inputPw = passwordEdt.text.toString()
+            ServerUtil.postRequestLogin(inputEmail, inputPw)
 
 
         }
