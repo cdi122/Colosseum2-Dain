@@ -6,6 +6,9 @@ class ServerUtil {
 
     val BASE_URL = "http://54.180.52.26"
 
-    fun postRequestLogin() {}
+    fun postRequestLogin() {
+
+
+    }
 }
 }
