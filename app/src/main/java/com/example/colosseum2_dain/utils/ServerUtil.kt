@@ -9,13 +9,13 @@ import kotlin.math.log
 class ServerUtil {
 
     companion object {
-        interface JsonReponseHandler{
+        interface JsonResponseHandler{
             fun onResponse(jsonObj : JSONObject)
         }
 
     val BASE_URL = "http://54.180.52.26"
 
-    fun postRequestLogin(email : String, pw : String, handler : JsonReponseHandler?) {
+    fun postRequestLogin(email : String, pw : String, handler : JsonResponseHandler?) {
 
 
         val urlString = "${BASE_URL}/user"
