@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.colosseum2_dain.utils.ServerUtil
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 
 class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +19,12 @@ class MainActivity : BaseActivity() {
 
             val inputEmail = emailEdt.text.toString()
             val inputPw = passwordEdt.text.toString()
-            ServerUtil.postRequestLogin(inputEmail, inputPw)
+            ServerUtil.postRequestLogin(inputEmail, inputPw, object : ServerUtil.Companion.JsonReponseHandler {
+                override fun onResponse(jsonObj: JSONObject) {
+
+                }
+
+            })
 
 
         }
