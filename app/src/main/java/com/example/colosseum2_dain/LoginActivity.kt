@@ -30,7 +30,13 @@ class LoginActivity : BaseActivity() {
                 override fun onResponse(jsonObj: JSONObject) {
 
                     val code = jsonObj.getInt("code")
-                    if (code == 200) {}
+                    if (code == 200) {
+                        val myIntent = Intent(mContext, MainActivity::class.java)
+                        startActivity(myIntent)
+                        finish()
+
+
+                    }
                     else { val message = jsonObj.getString("message")
                         runOnUiThread {Toast.makeText(mContext, message, Toast.LENGTH_SHORT).show()
                         }

@@ -17,6 +17,18 @@ class SignUpActivity : BaseActivity() {
     }
 
     override fun setupEvents() {
+        emailCheckBtn.setOnClickListener {
+
+            val inputEmail = emailEdt.text.toString()
+            ServerUtil.getRequestDuplCheck("EMAIL", inputEmail, object : ServerUtil.Companion.JsonResponseHandler{
+                override fun onResponse(jsonObj: JSONObject) {
+
+                }
+
+            })
+
+        }
+
         signUpBtn.setOnClickListener {
             val inputEmail = emailEdt.text.toString()
             val inputPw = passwordEdt.text.toString()

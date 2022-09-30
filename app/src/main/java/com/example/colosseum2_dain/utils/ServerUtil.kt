@@ -2,6 +2,7 @@ package com.example.colosseum2_dain.utils
 
 import android.util.Log
 import okhttp3.*
+import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
 import org.json.JSONObject
 import java.io.IOException
 import kotlin.math.log
@@ -90,6 +91,15 @@ class ServerUtil {
 
         }
 
+        fun getRequestDuplCheck(type: String, value : String, handler : JsonResponseHandler?){
+            val urlBuilder = "${BASE_URL}/user_check".toHttpUrlOrNull()!!.newBuilder()
+            urlBuilder.addEncodedQueryParameter("type", type)
+            urlBuilder.addEncodedQueryParameter("value", value)
+
+            val urlString = urlBuilder.build().toString()
+            Log.d("완성된 URL", urlString)
+
+        }
 
     }
 }
